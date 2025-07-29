@@ -1,7 +1,4 @@
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-
 const firebaseConfig = {
   apiKey: "AIzaSyARk0YjJJUkCtPwK0GX2VykbZI0MfSK3OU",
   authDomain: "familia-ribeiro-f692a.firebaseapp.com",
@@ -11,20 +8,33 @@ const firebaseConfig = {
   appId: "1:36243339331:web:7a35ba08968469bd7ebcf6"
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+firebase.initializeApp(firebaseConfig);
 
-document.getElementById("login-form").addEventListener("submit", (e) => {
-  e.preventDefault();
-  const email = document.getElementById("email").value;
-  const password = document.getElementById("password").value;
-
-  signInWithEmailAndPassword(auth, email, password)
+function login() {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  firebase.auth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       const user = userCredential.user;
-      document.getElementById("message").textContent = "Bem-vindo, " + user.email;
+      if (email === "chriz.40ribeiro@gmail.com" || email === "chrizribeiro.42@gmail.com") {
+        window.location.href = "/admin.html";
+      } else {
+        alert("Login realizado com sucesso!");
+      }
     })
     .catch((error) => {
-      document.getElementById("message").textContent = "Erro ao entrar: " + error.message;
+      alert("Erro: " + error.message);
     });
-});
+}
+
+function criarConta() {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      alert("Conta criada! Aguarde aprovação do administrador.");
+    })
+    .catch((error) => {
+      alert("Erro: " + error.message);
+    });
+}
