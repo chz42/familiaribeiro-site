@@ -1,0 +1,32 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f0f0f0;
+}
+.background-logo {
+  background-image: url('brasao.png');
+  background-size: 40%;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.08;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+.container {
+  position: relative;
+  z-index: 1;
+  padding: 2rem;
+  text-align: center;
+}
+input, button {
+  display: block;
+  margin: 1rem auto;
+  padding: 0.8rem;
+  width: 80%;
+  max-width: 300px;
+}
