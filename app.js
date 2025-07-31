@@ -1,0 +1,1 @@
+// app.js com lógica de autenticação segura
