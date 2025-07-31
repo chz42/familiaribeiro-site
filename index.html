@@ -1,27 +1,21 @@
+
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Família Ribeiro</title>
-  <link rel="stylesheet" href="style.css" />
-  <!-- Firebase App (core) -->
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Família Ribeiro</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <img src="images/brasao_ribeiro_transparente.png" alt="Brasão Família Ribeiro" class="brasao-bg" />
-    <h1 class="titulo">Bem-vindos ao legado da Família Ribeiro</h1>
-    <div class="formulario">
-      <input type="email" id="email" placeholder="Email" />
-      <input type="password" id="senha" placeholder="Senha" />
-      <button onclick="login()">Entrar</button>
-      <button onclick="criarConta()">Criar Conta</button>
-      <p id="mensagem"></p>
+    <div class="container">
+        <img src="images/brasao_ribeiro_transparente.png" alt="Brasão Família Ribeiro" class="logo">
+        <h1>Bem-vindos ao legado da Família Ribeiro</h1>
+        <input type="email" id="email" placeholder="Seu email">
+        <input type="password" id="senha" placeholder="Sua senha">
+        <button onclick="login()">Entrar</button>
+        <button onclick="criarConta()">Criar Conta</button>
     </div>
-  </div>
-  <script src="app.js"></script>
+    <script src="app.js"></script>
 </body>
 </html>

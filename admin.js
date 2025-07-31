@@ -1,1 +1,2 @@
-// admin.js com aprovação de usuários
+
+document.getElementById('usuarios').innerText = 'Lista de usuários simulada.';
