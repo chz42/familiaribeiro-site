@@ -1,14 +1,38 @@
-
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Administração</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Área de Admin - Família Ribeiro</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
-    <h1>Área Administrativa</h1>
-    <div id="usuarios"></div>
-    <script src="admin.js"></script>
+  <div class="admin-container">
+    <header class="admin-header">
+      <h1>Painel do Administrador</h1>
+      <button onclick="logout()">Sair</button>
+    </header>
+
+    <main class="admin-main">
+      <section class="admin-section">
+        <h2>Usuários Pendentes</h2>
+        <ul id="usuarios-pendentes-lista">
+          <p>Carregando...</p>
+        </ul>
+      </section>
+
+      <section class="admin-section">
+        <h2>Álbuns de Fotos</h2>
+        <button onclick="criarAlbum()">Criar Novo Álbum</button>
+        <ul id="albuns-lista">
+          <p>Carregando...</p>
+        </ul>
+      </section>
+    </main>
+  </div>
+  <script src="admin.js"></script>
 </body>
 </html>
